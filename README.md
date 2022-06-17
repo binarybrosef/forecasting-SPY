@@ -126,10 +126,10 @@ This script utilizes `yfinance` to obtain prices for specified securities – by
 ### utils.py
 This script implements the `WindowGenerator` class for generating sequences, and the `Baseline` class for instantiating a baseline model against which RNN performance can be evaluated. `WindowGenerator` provides class methods for generating train (`window.train()`) and validation (`window.val()`) sets comprising sequences.  Its `__init__()` method includes the following arguments:
 
--	input_width: length of input sequence used to predict target label;	for a sequence of length 7, input_width=7
--	label_width: length of predicted output sequence;	for predicting a single target, label_width=1.
--	shift: temporal offset between target label index and end of input sequence; for predicting a target one time step after the end of an input sequence, shift=1.
--	label_columns: names of target label(s) to predict; for predicting SPY close or derivative, label_columns=[‘SPY_close’]
+-	`input_width`: length of input sequence used to predict target label;	for a sequence of length 7, input_width=7
+-	`label_width`: length of predicted output sequence;	for predicting a single target, label_width=1.
+-	`shift`: temporal offset between target label index and end of input sequence; for predicting a target one time step after the end of an input sequence, shift=1.
+-	`label_columns`: names of target label(s) to predict; for predicting SPY close or derivative, label_columns=[‘SPY_close’]
 
 ### script.py
 This script loads a Pandas DataFrame from the .csv file created by get_df.py, creates periodic features, processes data, trains an RNN model, and evaluates the model against the baseline model. The following methods are included:
